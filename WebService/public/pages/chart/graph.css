@@ -87,7 +87,7 @@ body {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    padding: 1rem;
+    padding: 0.8rem 1rem;
     color: #fff;
     background-color: var(--green-800);
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
