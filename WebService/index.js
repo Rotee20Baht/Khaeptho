@@ -41,12 +41,11 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.status(200).sendFile(__dirname + '/public/index.html');
-    // res.status(200).sendFile(__dirname + '/public/pages/index/index.html');
+    res.status(200).sendFile(__dirname + '/public/pages/index/index.html');
 });
 
 app.get('/graph', (req, res) => {
-    res.status(200).sendFile(__dirname + '/public/graph.html');
+    res.status(200).sendFile(__dirname + '/public/pages/chart/graph.html');
 });
 
 app.get('/database', async (req, res) => {
@@ -57,13 +56,23 @@ app.get('/database', async (req, res) => {
         const response = result[0];
         res.status(200).json(response);
     }catch(err){
-        throw Error(err);
+        console.log(err);
     }
 
 })
 
+
+app.post('/database', async (req, res) => {
+    try{
+        saveDataToDB();
+        res.json("OK");
+    }catch(err){
+        console.log(first)
+    }
+        
+})
+
 app.get('/data', (req, res) => {
-    // console.log(data)
     res.status(200).json(data);
 });
 

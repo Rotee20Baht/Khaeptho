@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --green-50: #edfcf5;
+    --green-100: #d2f9e6;
+    --green-200: #a9f1d2;
+    --green-400: #39ce9c;
+    --green-500: #15b182;
+    --green-600: #0a916b;
+    --green-800: #095c47;
+    --aqua-100: #def6ff;
+    --aqua-200: #b6efff;
+    --aqua-500: #00ccff;
+    --aqua-600: #009fd4;
+    --aqua-800: #006b8d;
+    --red-100: #ffdddd;
+    --red-200: #ffc0c0;
+    --red-300: #ff9494;
+    --red-500: #ff2323;
+    --orange-100: #fff2d3;
+    --orange-200: #ffe1a5;
+    --orange-300: #ffca6d;
+    --orange-600: #ff7300;
+    --orange-800: #a1400b;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif ;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--green-50);
+}
+
+.container {
+    width: min(1000px, 90%);
+    margin: 1rem auto;
+    /* border: 1px solid red; */
+}
+
+.item{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: var(--green-200);
+}
+
+.item.cyan{
+    background-color: var(--aqua-200);
+}
+
+.item.cyan .graph-title{
+    color: var(--aqua-800);
+}
+
+.item.orange{
+    background-color: var(--orange-200);
+}
+
+.item.orange .graph-title{
+    color: var(--orange-800);
+}
+
+.graph-title{
+    display: inline-flex;
+    align-items: center ;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--green-800);
+    text-transform: capitalize;
+    line-height: 1;
+}
+
+.graph{
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+#home-btn{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    color: #fff;
+    background-color: var(--green-800);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: .3s all ease;
+}
+
+#home-btn:hover{
+    background-color: var(--green-400);
+    color: var(--green-800);;
+}

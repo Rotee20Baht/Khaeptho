@@ -285,9 +285,6 @@ body {
 }
 
 #nav-menu .badge-icon{
-    position: absolute;
-    bottom: 0;
-    width: 50%;
     height: 50%;
     fill: var(--orange-100);
 }

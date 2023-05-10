@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Css Link -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/pages/index/styles.css">
     <!-- FontAwesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="khaeptho-icon.ico">
     <title>Dashboard | Khaeptho Automation Indoor Grower</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
         <div class="card" id="water-level-card">
             <div class="wave-title">
                 <p>Water Level</p>
-                <p id="water_amount">0 ml</p>
+                <p id="water_amount">Loading...</p>
             </div>
             <div class="wave-container">
                 <svg width="100%" viewBox="0 0 1440 390" style="bottom: 0%" class="wave transition duration-300 ease-in-out delay-150">
@@ -93,7 +94,7 @@
             <div class="badge">
                 <div class="badge-info">
                     <p>Humidity</p>
-                    <p id="humidity-text">100 %</p>
+                    <p id="humidity-text">Loading...</p>
                 </div>
                 <svg class="badge-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#d2f9e6" version="1.1" id="Capa_1" viewBox="0 0 322.881 322.881" xml:space="preserve">
                     <g>
@@ -106,7 +107,7 @@
             <div class="badge">
                 <div class="badge-info">
                     <p>Temperature</p>
-                    <p id="temperature-text">0 °c</p>
+                    <p id="temperature-text">Loading...</p>
                 </div>
                 
                 <svg class="badge-icon" xmlns="http://www.w3.org/2000/svg" fill="#d2f9e6"  viewBox="0 0 32 32" version="1.1">
@@ -120,8 +121,8 @@
             <div class="badge" id="moisture-badge">
                 <div class="badge-info">
                     <p>Moisture Level</p>
-                    <p id="moisture-level">0</p>
-                    <p id="moisture-text">Dry</p>
+                    <p id="moisture-level">Loading...</p>
+                    <p id="moisture-text">Loading...</p>
                 </div>
                 <svg class="badge-icon" xmlns="http://www.w3.org/2000/svg" fill="#d2f9e6" viewBox="0 0 32 32" id="Layer_1" data-name="Layer 1">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>                    
@@ -132,7 +133,7 @@
             <div class="badge deactive">
                 <div class="badge-info">
                     <p>Motor Status</p>
-                    <p id="motor-status">off</p>
+                    <p id="motor-status">Loading...</p>
                 </div>
                 <div class="btn-toggle">
                     <label class="switch">
@@ -170,6 +171,6 @@
         </div>
     </div>
     <!-- Javascript Link -->
-    <script src="./apps.js"></script>
+    <script src="/pages/index/apps.js"></script>
 </body>
 </html>

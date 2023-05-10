@@ -8,15 +8,24 @@ const motor_status = document.querySelector('#motor-status');
 const moisture_level = document.querySelector('#moisture-level');
 const moisture_text = document.querySelector('#moisture-text');
 
+fetch('http://192.168.137.107/motor')
+.then(response => response.json())
+.then(data => {
+    const { motor } = data;
+    motor_status.innerHTML = (motor) ? 'ON' : 'OFF';
+    motor_toggle.checked = motor;
+})
+.catch(err => {
+    console.log(err);
+})
+
 motor_toggle.addEventListener('change', (e) => {
-    // Send GET request to mcu
-    // console.log(motor_toggle.closest('.badge'))
     const badgeParent = motor_toggle.closest('.badge');
     motor_status.innerText = motor_status.innerText == "OFF" ? "ON" : "OFF";
     const currentState = motor_status.innerText.toLowerCase();
     badgeParent.classList.toggle('deactive');
 
-    fetch(`http://192.168.137.151/motor/${currentState}`, {mode: 'no-cors'})
+    fetch(`http://192.168.137.107/motor/${currentState}`)
     .then(response => {
         response.json()
     })
@@ -29,8 +38,7 @@ let fetchInterval = setInterval(() => {
     fetch('http://localhost:5000/data')
     .then(res => res.json())
     .then(data => {
-        const { water, humidity, temperature, moisture } = data;
-        // console.log(water, humidity);
+        const { water, humidity, temperature, moisture, motor} = data;
         let volume;
         if(!water)
             volume = 0;
@@ -42,11 +50,6 @@ let fetchInterval = setInterval(() => {
         wave.style.display = `${volume > 0 ? 'block' : 'none'}`
         wave_bottom.style.height = `${volume > 0 ? height : 0}%`;
         water_amount.innerHTML = `${volume > 0 ? volume+' ml.' : 'No Water'}`
-
-        // if(humidity == null || temperature == null) {
-        //     humidity = 0;
-        //     temperature = 0;
-        // }
 
         humidity_text.innerHTML = `${parseFloat(humidity).toFixed(2)} %`;
         temperature_text.innerHTML = `${parseFloat(temperature).toFixed(2)} %`;
@@ -75,7 +78,6 @@ let fetchInterval = setInterval(() => {
             moistureBadge.classList.add('cyan');
         }
         
-
     })
     .catch(err => {
         console.log(err);

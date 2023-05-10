@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Css Link -->
+     <link rel="stylesheet" href="/pages/chart/graph.css">
+     <!-- FontAwesome Link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="icon" type="image/x-icon" href="khaeptho-icon.ico">
+    <title>Graph | Khaeptho Automation Indoor Grower</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item cyan">
+            <h1 class="graph-title">
+                <i class="fa-solid fa-water"></i>
+                water level
+            </h1>
+            <canvas class="graph" id="water-graph"></canvas>
+        </div>
+        <div class="item">
+            <h1 class="graph-title">
+                <i class="fa-solid fa-droplet"></i>
+                humidity
+            </h1>
+            <canvas class="graph" id="humidity-graph"></canvas>
+        </div>
+        <div class="item orange">
+            <h1 class="graph-title">
+                <i class="fa-solid fa-temperature-half"></i>
+                temperature
+            </h1>
+            <canvas class="graph" id="temperature-graph"></canvas>
+        </div>
+        <div class="item">
+            <h1 class="graph-title">
+                <i class="fa-solid fa-seedling"></i>
+                moisture
+            </h1>
+            <canvas class="graph" id="moisture-graph"></canvas>
+        </div>
+        <div class="item cyan">
+            <h1 class="graph-title">
+                <i class="fa-solid fa-power-off"></i>
+                motor
+            </h1>
+            <canvas class="graph" id="motor-graph"></canvas>
+        </div>
+
+    </div>
+    <a href="/" id="home-btn"><i class="fa-solid fa-house"></i></a>
+    <!-- Link ChartJs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <!-- Link Script -->
+    <script src="/pages/chart/graph.js"></script>
+</body>
+</html>
